@@ -2,6 +2,8 @@
 #include <random>
 #include <iostream>
 #include <limits>
+#include <thread>
+#include <chrono>
 
 bool checkTruth(double probability) {
     static std::random_device rd;
@@ -43,4 +45,8 @@ bool checkChoice(int choice, size_t max, int min) {
         return false;
     }
     else return true;
+}
+
+void wait(int ms) {
+    std::this_thread::sleep_for(std::chrono::milliseconds(ms));
 }

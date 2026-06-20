@@ -4,8 +4,6 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-#include <thread>
-#include <chrono>
 
 int main() {
 	int cashRegister = 0;
@@ -152,26 +150,26 @@ int main() {
 		else if (choice == 4) {
 			int tempTotalCash = 0;
 			std::cout << "\n[День завершився]";
-			std::this_thread::sleep_for(std::chrono::milliseconds(1500));
+			wait(1500);
 			std::cout << "\nІнспектор ";
 			inspector1.printInfo();
 			std::cout << " перевіряє...";
-			std::this_thread::sleep_for(std::chrono::milliseconds(1200));
+			wait(1200);
 			std::cout << "\nВсього продано: " << totalSold;
-			std::this_thread::sleep_for(std::chrono::milliseconds(300));
+			wait(300);
 			std::cout << "\nВсього зроблено: " << totalMade;
-			std::this_thread::sleep_for(std::chrono::milliseconds(300));
+			wait(300);
 			std::cout << "\nВсього залишилось: " << totalQuantity;
-			std::this_thread::sleep_for(std::chrono::milliseconds(200));
+			wait(200);
 			if ((totalMade - totalSold) == totalQuantity) {
 				std::cout << "\nІнспектор не побачив зникнення товару ";
 			}
 			else std::cout << "\nІнспектор побачив зникнення товару ";
-			std::this_thread::sleep_for(std::chrono::milliseconds(200));
+			wait(200);
 			std::cout << "\nІнспектор перевіряє касу...";
-			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+			wait(1000);
 			std::cout << "\n...";
-			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+			wait(1000);
 			for (auto seller : Memory::returnSellers()) {
 				tempTotalCash += seller->getMoney();
 			}
@@ -181,7 +179,7 @@ int main() {
 			}
 			else {
 				std::cout << "\nІнспектор не задоволен. В касі не хватает грошей\nІнспектор шукає злодія...\n";
-				std::this_thread::sleep_for(std::chrono::milliseconds(2500));
+				wait(2500);
 				int count = 1;
 				for (auto seller : Memory::returnSellers()) {
 					if(seller->testCheat()) {
@@ -196,7 +194,7 @@ int main() {
 				}
 				std::cout << "\n[Всі злодії спіймані]"; 
 			}
-			std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+			wait(2000);
 			std::cout << "\n\n[Новий день]";
 			std::cout << "\nКількість їжі поповнино\n";
 			for (auto dish : Memory::returnDishes()) {

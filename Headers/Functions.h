@@ -9,3 +9,5 @@ int inputChoice(std::function<void()> func);
 int inputChoiceText(const std::string& text);
 
 bool checkChoice(int choice, size_t max, int min);
+
+void wait(int ms);

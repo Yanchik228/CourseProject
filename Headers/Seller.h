@@ -9,6 +9,7 @@ class Seller : public Person {
 	int stolen;
 
 public:
+	Seller();
 	Seller(const std::string& name, double prob);
 
 	double getProb() const;

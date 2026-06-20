@@ -2,6 +2,8 @@
 #include <stdexcept>
 #include <iostream>
 
+Seller::Seller()
+	: Person("Немає", 0), badProbability(0.0), arrested(false), cheated(false), stolen(0) {}
 Seller::Seller(const std::string& name, double prob)
 	: Person(name, 0), badProbability(prob), arrested(false), cheated(false), stolen(0)
 {

@@ -14,7 +14,6 @@ public:
 	int getMoney() const;
 	
 	void changeMoney(int n);
-	void setName(const std::string& name);
 
 	virtual void printInfo() const = 0;
 

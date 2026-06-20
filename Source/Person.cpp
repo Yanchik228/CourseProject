@@ -22,6 +22,3 @@ int Person::getMoney() const {
 void Person::changeMoney(int n) {
 	money += n;
 }
-void Person::setName(const std::string& name) {
-	fullName = name;
-}

@@ -20,9 +20,9 @@ public:
 	void increaseTempSold(int increase);
 	void resetTempSold();
 
-	virtual std::string getType() const = 0;
-
 	void printInfo() const;
+
+	virtual std::string getType() const = 0;
 
 	virtual ~Dish() = default;
 };

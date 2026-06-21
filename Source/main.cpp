@@ -235,8 +235,8 @@ int main() {
 			}
 			while (true) {
 				quantity = inputChoiceText("\nВведіть кількість: ");
-				if (quantity <= 0) {
-					std::cout << "\n[Кількість не може бути негативною/нульовою!]";
+				if (quantity < 0) {
+					std::cout << "\n[Кількість не може бути негативною!]";
 				}
 				else break;
 			}

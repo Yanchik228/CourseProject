@@ -14,8 +14,8 @@ Dish::Dish(const std::string& name, int price, int quantity)
 	if (price < 0) {
 		throw std::invalid_argument("Вартість не може бути негативною!");
 	}
-	if (quantity <= 0) {
-		throw std::invalid_argument("Кількість не може бути негативною/нульовою!");
+	if (quantity < 0) {
+		throw std::invalid_argument("Кількість не може бути негативною!");
 	}
 }
 

@@ -95,9 +95,12 @@ void showDeleteChoice() {
 
 void showBought() {
 	std::cout << "\n[Куплено]\n";
+	bool count = false;
 	for (auto dish : Memory::returnDishes()) {
 		if (dish->getTempSold() > 0) {
+			if (count) std::cout << "\n";
 			std::cout << dish->getName() << ": " << dish->getTempSold() << " порцій";
+			count = true;
 		}
 	}
 }

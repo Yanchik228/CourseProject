@@ -13,7 +13,6 @@ class Memory {
 
 	static std::shared_ptr<Visitor> selectedVisitor;
 	static std::shared_ptr<Seller> selectedSeller;
-
 public:
 	Memory() = delete;
 

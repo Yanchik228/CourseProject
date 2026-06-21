@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <limits>
 
 int main() {
 	int cashRegister = 0;
@@ -361,6 +362,7 @@ int main() {
 
 		else {
 			std::cout << "\n[Виберіть коректний варіант!]";
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
 	}
 }

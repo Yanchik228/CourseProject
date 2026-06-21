@@ -45,16 +45,18 @@ int main() {
 
 		else if (choice == 2) {
 			int selChoice;
+			bool ar = false;
 
 			while (true) {
 				selChoice = inputChoice(showPickSeller);
 				if (Memory::getSeller(selChoice - 1)->isArrested()) {
 					std::cout << "\n[У злодіїв нічого покупати не можна!]";
+					ar = true;
 				}
 				if (checkChoice(selChoice, Memory::getSellerCount(), 0)) break;
 			}
 			if (selChoice == 0) continue;
-			Memory::selectSeller(selChoice - 1);
+			if (!ar) Memory::selectSeller(selChoice - 1);
 		}
 
 		else if (choice == 3) {

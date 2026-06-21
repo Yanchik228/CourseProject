@@ -271,7 +271,8 @@ int main() {
 
 				while (true) {
 					std::cout << "\nВведіть ПІБ: ";
-					std::cin >> name;
+					std::cin.ignore();
+					std::getline(std::cin, name);
 					if (name.empty()) {
 						std::cout << "\n[ПІБ не може бути порожнім!]";
 					}
@@ -295,7 +296,8 @@ int main() {
 
 				while (true) {
 					std::cout << "\nВведіть ПІБ: ";
-					std::cin >> name;
+					std::cin.ignore();
+					std::getline(std::cin, name);
 					if (name.empty()) {
 						std::cout << "\n[ПІБ не може бути порожнім!]";
 					}

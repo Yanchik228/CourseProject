@@ -187,7 +187,7 @@ int main() {
 					if(seller->testCheat()) {
 						std::cout << "\nЗлочинець " << count << ": ";
 						seller->printName();
-						std::cout << ", вкрав: " << seller->getStolen() << " --- [АРЕШТОВАН]";
+						std::cout << ", вкрав: " << seller->getStolen() << " грн --- [АРЕШТОВАН]";
 						seller->getArrested();
 					}
 				}

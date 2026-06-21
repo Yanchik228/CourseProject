@@ -39,6 +39,9 @@
     <ClInclude Include="Headers\Seller.h" />
     <ClInclude Include="Headers\Visitor.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

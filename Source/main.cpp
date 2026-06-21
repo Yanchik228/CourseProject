@@ -87,18 +87,22 @@ int main() {
 					}
 					else if (checkChoice(dishChoice, Memory::getDishCount() + 1, 0)) break;
 				}
-				if (dishChoice == 0) break;
-
+				if (dishChoice == 0) {
+					for (auto dish : Memory::returnDishes()) {
+						dish->resetBackTempSold();
+					}
+					break;
+				}
 				if (dishChoice == Memory::getDishCount() + 1) {
 					if (tempMoney > Memory::getSelectedVisitor()->getMoney()) {
 						int bChoice;
-						while (true) {
-							bChoice = inputChoice(showBadBuyChoice);
-							if (checkChoice(bChoice, 2, 1)) break;
-						}
 						tempMoney = 0;
 						for (auto dish : Memory::returnDishes()) {
 							dish->resetBackTempSold();
+						}
+						while (true) {
+							bChoice = inputChoice(showBadBuyChoice);
+							if (checkChoice(bChoice, 2, 1)) break;
 						}
 						if (bChoice == 1) continue;
 						else if (bChoice == 2) break;
@@ -106,7 +110,6 @@ int main() {
 					else {
 						showBought();
 						Memory::getSelectedVisitor()->changeMoney(-tempMoney);
-						Memory::getSelectedSeller()->changeMoney(tempMoney);
 						if (checkTruth(Memory::getSelectedSeller()->getProb())) {
 							Memory::getSelectedSeller()->cheat();
 							Memory::getSelectedSeller()->steal(tempMoney * 0.1);
@@ -162,17 +165,18 @@ int main() {
 			std::cout << "\nВсього залишилось: " << totalQuantity;
 			wait(200);
 			if ((totalMade - totalSold) == totalQuantity) {
-				std::cout << "\nІнспектор не побачив зникнення товару ";
+				std::cout << "\nІнспектор не виявив зникнення товару ";
 			}
-			else std::cout << "\nІнспектор побачив зникнення товару ";
+			else std::cout << "\nІнспектор виявив зникнення товару ";
 			wait(200);
 			std::cout << "\nІнспектор перевіряє касу...";
 			wait(1000);
 			std::cout << "\n...";
 			wait(1000);
 			for (auto seller : Memory::returnSellers()) {
-				tempTotalCash += seller->getMoney();
+				tempTotalCash += seller->getStolen();
 			}
+			tempTotalCash += cashRegister;
 			std::cout << "\nПовинно бути: " << tempTotalCash << " грн\nЄ в касі: " << cashRegister << " грн";
 			if (tempTotalCash == cashRegister) {
 				std::cout << "\nВсі продавці були чесними. Інспектор задоволен. ";
@@ -185,7 +189,7 @@ int main() {
 					if(seller->testCheat()) {
 						std::cout << "\nЗлочинець " << count << ": ";
 						seller->printName();
-						std::cout << ", вкрав: " << seller->stole() << " --- [АРЕШТОВАН]";
+						std::cout << ", вкрав: " << seller->getStolen() << " --- [АРЕШТОВАН]";
 						seller->getArrested();
 					}
 				}

@@ -7,14 +7,13 @@ class Seller : public Person {
 	bool arrested;
 	bool cheated;
 	int stolen;
-
 public:
 	Seller();
 	Seller(const std::string& name, double prob);
 
 	double getProb() const;
 
-	int stole() const;
+	int getStolen() const;
 
 	bool isArrested() const;
 

@@ -3,9 +3,9 @@
 #include <iostream>
 
 Seller::Seller()
-	: Person("Немає", 0), badProbability(0.0), arrested(false), cheated(false), stolen(0) {}
+	: Person("Невідомо"), badProbability(0.0), arrested(false), cheated(false), stolen(0) {}
 Seller::Seller(const std::string& name, double prob)
-	: Person(name, 0), badProbability(prob), arrested(false), cheated(false), stolen(0)
+	: Person(name), badProbability(prob), arrested(false), cheated(false), stolen(0)
 {
 	if (badProbability > 1.0 || badProbability < 0.0) {
 		throw std::invalid_argument("Неможливий шанс!");
@@ -16,7 +16,7 @@ double Seller::getProb() const {
 	return badProbability;
 }
 
-int Seller::stole() const {
+int Seller::getStolen() const {
 	return stolen;
 }
 

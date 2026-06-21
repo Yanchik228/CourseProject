@@ -18,7 +18,6 @@ public:
 
 	void increaseQuantity(int increase);
 	void increaseTempSold(int increase);
-	void resetBackTempSold();
 	void resetTempSold();
 
 	virtual std::string getType() const = 0;

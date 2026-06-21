@@ -54,10 +54,6 @@ void Dish::increaseTempSold(int increase) {
 		quantity -= increase;
 	}
 }
-void Dish::resetBackTempSold() {
-	quantity += tempSold;
-	tempSold = 0;
-}
 void Dish::resetTempSold() {
 	tempSold = 0;
 }

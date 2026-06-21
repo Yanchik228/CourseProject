@@ -86,7 +86,8 @@ int main() {
 				}
 				if (dishChoice == 0) {
 					for (auto dish : Memory::returnDishes()) {
-						dish->resetBackTempSold();
+						dish->increaseQuantity(dish->getTempSold());
+						dish->resetTempSold();
 					}
 					break;
 				}
@@ -95,7 +96,8 @@ int main() {
 						int bChoice;
 						tempMoney = 0;
 						for (auto dish : Memory::returnDishes()) {
-							dish->resetBackTempSold();
+							dish->increaseQuantity(dish->getTempSold());
+							dish->resetTempSold();
 						}
 						while (true) {
 							bChoice = inputChoice(showBadBuyChoice);

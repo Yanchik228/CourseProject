@@ -40,7 +40,6 @@ int main() {
 				if (checkChoice(visChoice, Memory::getVisitorCount(), 0)) break;
 			}
 			if (visChoice == 0) continue;
-
 			Memory::selectVisitor(visChoice - 1);
 		}
 
@@ -55,9 +54,6 @@ int main() {
 				if (checkChoice(selChoice, Memory::getSellerCount(), 0)) break;
 			}
 			if (selChoice == 0) continue;
-
-			
-
 			Memory::selectSeller(selChoice - 1);
 		}
 
@@ -80,6 +76,7 @@ int main() {
 
 			while (true) {
 				int amount;
+
 				while (true) {
 					dishChoice = inputChoice([&] { showMenu(cycle, tempMoney); });
 					if (!cycle) {
@@ -152,6 +149,7 @@ int main() {
 
 		else if (choice == 4) {
 			int tempTotalCash = 0;
+
 			std::cout << "\n[День завершився]";
 			wait(1500);
 			std::cout << "\nІнспектор ";
@@ -240,6 +238,7 @@ int main() {
 				}
 				else break;
 			}
+
 			if (dishTypeChoice == 1) {
 				Memory::addDish(std::make_shared<HotDish>(name, price, quantity));
 			}
@@ -267,6 +266,7 @@ int main() {
 			if (addChoice == 1) {
 				std::string name;
 				int money;
+
 				while (true) {
 					std::cout << "\nВведіть ПІБ: ";
 					std::cin >> name;
@@ -290,6 +290,7 @@ int main() {
 			if (addChoice == 2) {
 				std::string name;
 				int chance;
+
 				while (true) {
 					std::cout << "\nВведіть ПІБ: ";
 					std::cin >> name;

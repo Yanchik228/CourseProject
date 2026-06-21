@@ -170,14 +170,12 @@ int main() {
 			else std::cout << "\nІнспектор виявив зникнення товару ";
 			wait(200);
 			std::cout << "\nІнспектор перевіряє касу...";
-			wait(1000);
-			std::cout << "\n...";
-			wait(1000);
+			wait(1300);
 			for (auto seller : Memory::returnSellers()) {
 				tempTotalCash += seller->getStolen();
 			}
 			tempTotalCash += cashRegister;
-			std::cout << "\nПовинно бути: " << tempTotalCash << " грн\nЄ в касі: " << cashRegister << " грн";
+			std::cout << "\nПовинно бути: " << tempTotalCash << " грн\nВ касі: " << cashRegister << " грн";
 			if (tempTotalCash == cashRegister) {
 				std::cout << "\nВсі продавці були чесними. Інспектор задоволен. ";
 			}
